@@ -45,7 +45,7 @@ Before installing, ensure your device meets the following requirements:
 3. Open the **LSPosed Manager** app.
 4. Go to the **Modules** tab and enable **IconsCustomizer**.
 5. Ensure the **System Launcher** (HyperOS Launcher) is checked in the scope list.
-6. **Reboot your device** to apply the hooks.
+6. **Force Stop Launcher App Or Reboot your device** to apply the hooks.
 
 ## 🛠️ How to Use
 
