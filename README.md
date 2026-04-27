@@ -36,7 +36,7 @@ An advanced Xposed/LSPosed module designed to bring ultimate icon customization 
 Before installing, ensure your device meets the following requirements:
 1. **Root Access:** Magisk or KernelSU installed.
 2. **Xposed Framework:** LSPosed (Zygisk or Riru version) installed and active.
-3. **OS:** HyperOS (Tested on Poco/Xiaomi devices).
+3. **OS:** HyperOS (Tested on Poco F7 HyperOS 3.1 China).
 
 ## 🚀 Installation
 
