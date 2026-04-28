@@ -57,6 +57,7 @@ Before installing, ensure your device meets the following requirements:
 
 > **🎨 Note on Monet Theming:**
 > If you are using icon packs with Monet theming colors, you will need to use the **ColorBlendr** app to manage your Monet color palette control. You must click the **Restart Launcher** button every time you change your wallpaper or make changes to your Monet color palette to apply those new colors to your icons.
+> It is recommended to use **Override Icon Colors** option only with Icon Packs That Support's dynamic Monet Wallpaper based colors.
 
 ## 📜 License
 

@@ -318,7 +318,7 @@ class SettingsFragment : Fragment(), App.ServiceStateListener {
         view.findViewById<View>(R.id.row_monet_bg).visibility = vMonetColors
         view.findViewById<View>(R.id.div_monet_bg).visibility = vMonetColors
 
-        val vDockMonet = if (isMonetCustomization && isThemeDockFolder) View.VISIBLE else View.GONE
+        val vDockMonet = if (isThemeDockFolder) View.VISIBLE else View.GONE
         view.findViewById<View>(R.id.row_dock_bg).visibility = vDockMonet
         view.findViewById<View>(R.id.div_dock_bg).visibility = vDockMonet
 
