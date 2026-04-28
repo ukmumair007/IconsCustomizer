@@ -45,7 +45,7 @@ Before installing, ensure your device meets the following requirements:
 3. Open the **LSPosed Manager** app.
 4. Go to the **Modules** tab and enable **IconsCustomizer**.
 5. Ensure the **System Launcher** (HyperOS Launcher) is checked in the scope list.
-6. **Reboot your device** to apply the hooks.
+6. **Force Stop Launcher App Or Reboot your device** to apply the hooks.
 
 ## 🛠️ How to Use
 
@@ -57,6 +57,7 @@ Before installing, ensure your device meets the following requirements:
 
 > **🎨 Note on Monet Theming:**
 > If you are using icon packs with Monet theming colors, you will need to use the **ColorBlendr** app to manage your Monet color palette control. You must click the **Restart Launcher** button every time you change your wallpaper or make changes to your Monet color palette to apply those new colors to your icons.
+> It is recommended to use **Override Icon Colors** option only with Icon Packs That Support's dynamic Monet Wallpaper based colors.
 
 ## 📜 License
 
