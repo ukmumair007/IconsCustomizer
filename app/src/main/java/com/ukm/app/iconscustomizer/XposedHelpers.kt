@@ -1,5 +1,6 @@
 package com.ukm.app.iconscustomizer // Replace with your package
 
+import android.util.Log
 import java.lang.reflect.Constructor
 import java.lang.reflect.Field
 import java.lang.reflect.Method
@@ -110,7 +111,7 @@ object XposedHelpers {
             }
             currentClass = currentClass.superclass
         }
-        throw NoSuchMethodError("Method $methodName not found in ${clazz.name}")
+        throw Exception("Method $methodName not found in ${clazz.name}")
     }
 
     fun findMethodExactIfExists(
@@ -320,23 +321,31 @@ object XposedHelpers {
     // METHOD EXECUTION & INSTANTIATION
     // =========================================================================
 
-    fun callMethod(obj: Any, methodName: String, vararg args: Any?): Any? {
-        val parameterTypes = getParameterTypes(*args)
-
+    fun callMethod(
+        obj: Any,
+        methodName: String,
+        parameterTypes: Array<Class<*>> = emptyArray(),
+        vararg args: Any?
+    ): Any? {
         val method = try {
             findMethodExact(obj.javaClass, methodName, *parameterTypes)
         } catch (e: NoSuchMethodError) {
             try {
                 findMethodBestMatch(obj.javaClass, methodName, *parameterTypes)
             } catch (e: NoSuchMethodError) {
+                Log.e(MainHook.TAG, "callMethod: ", e)
                 throw Exception("Method $methodName with matching params not found in ${obj.javaClass.name}")
             }
         }
         return method.invoke(obj, *args)
     }
 
-    fun callStaticMethod(clazz: Class<*>, methodName: String, vararg args: Any?): Any? {
-        val parameterTypes = getParameterTypes(*args)
+    fun callStaticMethod(
+        clazz: Class<*>,
+        methodName: String,
+        parameterTypes: Array<Class<*>> = emptyArray(),
+        vararg args: Any?
+    ): Any? {
 
         val method = try {
             findMethodExact(clazz, methodName, *parameterTypes)
@@ -351,8 +360,11 @@ object XposedHelpers {
         }
     }
 
-    fun newInstance(clazz: Class<*>, vararg args: Any?): Any {
-        val parameterTypes = getParameterTypes(*args)
+    fun newInstance(
+        clazz: Class<*>,
+        parameterTypes: Array<Class<*>> = emptyArray(),
+        vararg args: Any?
+    ): Any {
 
         val constructor = try {
             findConstructorExact(clazz, *parameterTypes)
@@ -394,9 +406,6 @@ object XposedHelpers {
     // INTERNAL UTILS
     // =========================================================================
 
-    private fun getParameterTypes(vararg args: Any?): Array<Class<*>> {
-        return args.map { it?.javaClass ?: Any::class.java }.toTypedArray()
-    }
 
     private fun isAssignable(provided: Class<*>, target: Class<*>): Boolean {
         if (target.isAssignableFrom(provided)) return true

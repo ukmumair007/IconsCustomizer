@@ -37,6 +37,7 @@ Before installing, ensure your device meets the following requirements:
 1. **Root Access:** Magisk or KernelSU installed.
 2. **Xposed Framework:** LSPosed (Zygisk or Riru version) installed and active.
 3. **OS:** HyperOS (Tested on Poco F7 HyperOS 3.0 And 3.1 China Latest Launcher).
+4. Apply Default Icons From HyperOS Themes App For Best Results.
 
 ## 🚀 Installation
 
@@ -53,7 +54,7 @@ Before installing, ensure your device meets the following requirements:
 2. Enable the **Allow Custom Icon Packs** option.
 3. Select your desired installed icon pack from the list.
 4. If some apps have missing icons in the icon pack, use the **"Apply Custom Icon to Specific Apps"** option and choose an identical icon from the icon pack for that app.
-5. Tap the **"Restart Launcher"** button to apply changes immediately.
+5. Tap the **"Restart Launcher"** button to apply changes immediately if they are not automatically applied.
 
 > **🎨 Note on Monet Theming:**
 > If you are using icon packs with Monet theming colors, you will need to use the **ColorBlendr** app to manage your Monet color palette control. You must click the **Restart Launcher** button every time you change your wallpaper or make changes to your Monet color palette to apply those new colors to your icons.
